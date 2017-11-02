@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'mixins';
+
+.icon-bar {
+  margin: 0 auto;
+  width: auto; /* Set a specific width */
+}
+
+.icon-bar a {
+border:1px solid grey;
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: center; /* Center-align text */
+    padding: 30px; /* Add some padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+  //  color: white; /* White text color */
+    font-size: 40px; /* Increased font-size */
+    margin-bottom:5px;
+}
+
+.icon-bar a:hover {
+  // @include expand();
+}
+
+.active {
+   background-color: honeydew; /* Add an active/current color */
+}
+
+img.portfolio {
+    height: 20vw;
+}
+
+
+.navigation{
+background-color:$var_navi_bkgdColor;
+}

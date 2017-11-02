@@ -1,0 +1,22 @@
+
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+@media screen and (max-width: 768px) {
+
+  .flex-container{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:stretch;
+  }
+
+  .icon-bar {
+    padding-top:0px;
+  }
+  .icon-bar a {
+  display:inline-flex; /* Make the links appear below each other instead of side-by-side */
+  font-size: 20px; /* Increased font-size */
+  padding: 15px; /* Add some padding */
+  }
+
+}
