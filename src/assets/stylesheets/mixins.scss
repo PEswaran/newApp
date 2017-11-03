@@ -1,14 +1,52 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+/*==========  Keyframes Declarations  ==========*/
+/*Each block contains rule sets called keyframes. A keyframe
+defines the style that will be applied for that moment within the animation.
+The animation engine will smoothly interpolate style between the keyframes.*/
+
+/*=======================================================*/
+/*Spinner -
+will rotate the icon and grow it double its size when hovered upon
+Set up the spinner function*/
+
+@mixin spinner(){
+  animation-name: spin;
+    animation-duration: 5s;
+  //  animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
-@mixin moveAround(){
-  animation: mymove 5s infinite;
-  -webkit-animation: mymove 5s infinite;
+/* Set up the spinner keyframe ruleset called spin*/
+@keyframes spin {
+    from {transform:scale(1) rotate(0deg);}
+    to {transform:scale(2) rotate(360deg);}
+
 }
+/*=======================================================*/
+
+/*MoveAround -
+will expand the background by changing the color
+Set up the moveAround function*/
+
+@mixin moveAround(){
+animation: bubble 1.0s forwards;
+-webkit-animation: bubble 1.0s forwards; /* for less modern browsers */
+}
+
+/* Set up the moveAround keyframe ruleset called mymove*/
+@keyframes mymove {
+  0%   {top: 0px; background: red; width: 100px;}
+  100% {top: 50px; background: yellow; width: auto;}
+}
+
+/*=======================================================*/
+
+@keyframes bubble {
+    0%   { transform:scale(0.5); opacity:0.0; }
+    50%  { transform:scale(1.2); opacity:0.5; }
+    100% { transform:scale(1.0); opacity:1.0; }
+}
+
+
 
 @mixin shakeup(){
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -21,6 +59,7 @@
   animation: stretch 5s ease-out;
   -webkit-animation: stretch 5s ease-out;
 }
+
 
 @keyframes stretch {
   0% {
@@ -36,13 +75,6 @@
     background-color: yellow;
   }
 }
-
-
-@keyframes mymove {
-  0%   {top: 0px; background: red; width: 100px;}
-  100% {top: 50px; background: yellow; width: auto;}
-}
-
 
 @keyframes shake {
   10%, 90% {
